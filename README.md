@@ -1,7 +1,5 @@
 # Ollie Thomas's CityStasher Tech Test
 
-Make sure you have the CORS disable chrome plugin.
-
 ## Install and Setup
 
 First run:
