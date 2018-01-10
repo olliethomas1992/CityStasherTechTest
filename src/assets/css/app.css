@@ -1,0 +1,11 @@
+$bgColor: rgb(245, 245, 245);
+$textColor: rgb(84, 84, 84);
+
+body {
+    background-color: $bgColor;
+    font-family: "Open Sans", sans-serif;
+    color: $textColor;
+}
+
+@tailwind preflight;
+@tailwind utilities;
