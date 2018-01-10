@@ -8,8 +8,8 @@ export default class Header extends Component {
         return <div className="bg-white shadow-sm">
                 <nav className="container mx-auto flex items-center py-4">
                     <div className="flex items-center">
-                        <img className="mr-4" src={LogoBlack} alt="" />
-                        <ul className="list-reset flex mt-2">
+                        <img className="mr-4" src={LogoBlack} alt="CityStasher" />
+                        <ul id="menu" className="list-reset flex mt-2">
                             <li className="px-4">
                                 <NavLink className="menu_item" to="/stashpoints">
                                     Stashpoints
