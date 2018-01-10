@@ -4,6 +4,8 @@ import { NavLink } from "react-router-dom";
 
 import { fetchStashPoints } from "../actions";
 
+import StashpointsList from "./StashpointsList";
+
 class Stashpoints extends Component {
     componentDidMount() {
         this.props.fetchStashPoints();
@@ -14,7 +16,9 @@ class Stashpoints extends Component {
             <div className="container mx-auto mt-10">
                 <h1 className="text-xlg my-8">Stashpoints</h1>
                 <div className="flex">
-                    <div className="w-1/4">Side</div>
+                    <div className="w-1/3 mr-12">
+                        <StashpointsList stashpoints={this.props.stashpoints} />
+                    </div>
                     <div className="w-full">Map</div>
                 </div>
             </div>
@@ -23,7 +27,7 @@ class Stashpoints extends Component {
 }
 
 const mapStateToProps = state => ({
-    menu: state.menu
+    stashpoints: state.stashpoints || {}
 });
 
 const mapDispatchToProps = {
