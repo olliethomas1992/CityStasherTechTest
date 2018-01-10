@@ -4,26 +4,6 @@ import _ from "lodash";
 import StashpointListItem from "./StashpointListItem";
 
 export default class StashpointsList extends Component {
-    constructor(props) {
-        super(props);
-
-        this.state = {
-            filteredStashPoints: {},
-            term: ""
-        };
-
-        this.onInputChange = this.onInputChange.bind(this);
-    }
-
-    componentWillReceiveProps({ stashpoints }) {
-        this.setState({
-            filteredStashPoints: this.filterStashpoints(
-                stashpoints,
-                this.state.term
-            )
-        });
-    }
-
     render() {
         return (
             <div>
@@ -32,7 +12,7 @@ export default class StashpointsList extends Component {
                         Search
                     </label>
                     <input
-                        onChange={this.onInputChange}
+                        onChange={event => this.props.updateSearchTerm(event)}
                         className="w-full my-2 py-4 px-2 shadow border"
                         id="search"
                         type="text"
@@ -44,26 +24,8 @@ export default class StashpointsList extends Component {
         );
     }
 
-    filterStashpoints(stashpoints, filter) {
-        return _.filter(stashpoints, stashpoint => {
-            if (stashpoint.location_name.match(new RegExp(filter, "i"))) {
-                return stashpoint;
-            }
-        });
-    }
-
-    onInputChange(event) {
-        this.setState({
-            term: event.target.value,
-            filteredStashPoints: this.filterStashpoints(
-                this.props.stashpoints,
-                event.target.value
-            )
-        });
-    }
-
     renderStashpoints() {
-        return _.map(this.state.filteredStashPoints, (stashpoint, i) => {
+        return _.map(this.props.stashpoints, (stashpoint, i) => {
             return <StashpointListItem key={i} stashpoint={stashpoint} />;
         });
     }

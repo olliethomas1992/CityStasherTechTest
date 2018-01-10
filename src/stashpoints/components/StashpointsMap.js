@@ -19,7 +19,9 @@ export const StashpointsMap = compose(
     withScriptjs,
     withGoogleMap
 )(props => (
-    <GoogleMap defaultZoom={8} defaultCenter={{ lat: 51.4, lng: -0.7 }}>
+    <GoogleMap defaultZoom={8} defaultCenter={{ lat: 51.4, lng: -0.7 }} options={{
+        scrollwheel: true
+    }}>
         { _.map(props.stashpoints, (stashpoint, i) => {
             return <Marker key={i} onClick={event => props.handleOnClick(event, stashpoint)} position={{ lat: stashpoint.latitude, lng: stashpoint.longitude }} />;
         }) }
