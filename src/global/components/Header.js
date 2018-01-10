@@ -11,22 +11,22 @@ export default class Header extends Component {
                         <img className="mr-4" src={LogoBlack} alt="CityStasher" />
                         <ul id="menu" className="list-reset flex mt-2">
                             <li className="px-4">
-                                <NavLink className="menu_item" to="/stashpoints">
+                                <NavLink activeClassName="active" className="menu_item" to="/stashpoints">
                                     Stashpoints
                                 </NavLink>
                             </li>
                             <li className="px-4">
-                                <NavLink className="menu_item" to="/bookings">
+                                <NavLink activeClassName="active" className="menu_item" to="/bookings">
                                     Bookings
                                 </NavLink>
                             </li>
                             <li className="px-4">
-                                <NavLink className="menu_item" to="/supplies">
+                                <NavLink activeClassName="active" className="menu_item" to="/supplies">
                                     Supplies
                                 </NavLink>
                             </li>
                             <li className="px-4">
-                                <NavLink className="menu_item" to="/customers">
+                                <NavLink activeClassName="active" className="menu_item" to="/customers">
                                     Customers
                                 </NavLink>
                             </li>
