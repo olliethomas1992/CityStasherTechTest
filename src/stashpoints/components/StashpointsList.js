@@ -39,7 +39,7 @@ export default class StashpointsList extends Component {
                     />
                 </div>
                 <hr className="my-4" />
-                <ul className="list-reset">{this.renderStashpoints()}</ul>
+                <ul className="list-reset h-48">{this.renderStashpoints()}</ul>
             </div>
         );
     }

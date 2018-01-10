@@ -5,10 +5,28 @@ import { NavLink } from "react-router-dom";
 import { fetchStashPoints } from "../actions";
 
 import StashpointsList from "./StashpointsList";
+import {StashpointsMap} from './StashpointsMap';
 
 class Stashpoints extends Component {
+    constructor() {
+        super();
+
+        this.state = {
+            selectedMarker: {}
+        }
+
+        this.handleOnClick = this.handleOnClick.bind(this);
+    }
+
+
     componentDidMount() {
         this.props.fetchStashPoints();
+    }
+
+    handleOnClick(event, stashpoint){
+        return this.setState({
+            selectedMarker: stashpoint
+        })
     }
 
     render() {
@@ -19,7 +37,9 @@ class Stashpoints extends Component {
                     <div className="w-1/3 mr-12">
                         <StashpointsList stashpoints={this.props.stashpoints} />
                     </div>
-                    <div className="w-full">Map</div>
+                    <div className="w-full">
+                        <StashpointsMap handleOnClick={this.handleOnClick} stashpoints={ this.props.stashpoints } />
+                    </div>
                 </div>
             </div>
         );
