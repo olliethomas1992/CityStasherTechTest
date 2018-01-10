@@ -10,23 +10,23 @@ export default class Header extends Component {
                     <div className="flex items-center">
                         <img className="mr-4" src={LogoBlack} alt="" />
                         <ul className="list-reset flex mt-2">
-                            <li>
-                                <NavLink to="/stashpoints">
+                            <li className="px-4">
+                                <NavLink className="menu_item" to="/stashpoints">
                                     Stashpoints
                                 </NavLink>
                             </li>
-                            <li>
-                                <NavLink to="/bookings">
+                            <li className="px-4">
+                                <NavLink className="menu_item" to="/bookings">
                                     Bookings
                                 </NavLink>
                             </li>
-                            <li>
-                                <NavLink to="/supplies">
+                            <li className="px-4">
+                                <NavLink className="menu_item" to="/supplies">
                                     Supplies
                                 </NavLink>
                             </li>
-                            <li>
-                                <NavLink to="/customers">
+                            <li className="px-4">
+                                <NavLink className="menu_item" to="/customers">
                                     Customers
                                 </NavLink>
                             </li>

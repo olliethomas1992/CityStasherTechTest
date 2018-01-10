@@ -25,6 +25,10 @@ export default class StashpointsList extends Component {
     }
 
     renderStashpoints() {
+        if(_.isEmpty(this.props.stashpoints)){
+            return <div className="mx-auto my-8" id="loading" />;
+        }
+
         return _.map(this.props.stashpoints, (stashpoint, i) => {
             return <StashpointListItem key={i} stashpoint={stashpoint} />;
         });

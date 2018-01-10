@@ -1,3 +1,5 @@
+@import "./spinner";
+
 $bgColor: rgb(245, 245, 245);
 $textColor: rgb(84, 84, 84);
 
@@ -5,6 +7,18 @@ body {
     background-color: $bgColor;
     font-family: "Open Sans", sans-serif;
     color: $textColor;
+}
+
+.menu_item {
+    @apply .no-underline .text-grey-light;
+
+    &:hover {
+        @apply .text-blue-dark;
+    }
+}
+
+.active {
+    @apply .text-blue-dark;
 }
 
 @tailwind preflight;
